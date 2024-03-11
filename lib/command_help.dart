@@ -6,9 +6,10 @@ Future<void> callbackHelp() {
 
   var listCommands = getCliCommands();
 
-  for (var command in listCommands.values) {
-    print("-$command.name: $command.description");
+  for (var entry in listCommands.entries) {
+    print("-${entry.key}: ${entry.value.description}");
   }
+  print("");
 
   return Future.value();
 }

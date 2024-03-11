@@ -1,4 +1,6 @@
 import "./command_help.dart";
+import "./command_map.dart";
+import "dart:io";
 
 class CommandLine {
   final String name;
@@ -10,10 +12,11 @@ class CommandLine {
 Map<String, CommandLine> getCliCommands() {
   return {
     "help": CommandLine(
-        "help", "Get all the available list commands", callbackHelp,
-    "map": CommandLine("map", "List down the map info in the world of pokemon",
-        () => Future.value()),
+        "help", "Get all the available list commands", callbackHelp),
+    "map": CommandLine(
+        "map", "List down the map info in the world of pokemon", callbackMap),
     "explore": CommandLine(
         "explore", "Explore the area by name or id", () => Future.value()),
+    "exit": CommandLine("exit", "Exit the prgoram", () => exit(0))
   };
 }
