@@ -3,7 +3,7 @@ import "package:dart_pokeapi/api/pokeapi.dart";
 import "./types_api_declare.dart";
 
 Future<LocationAreaResp?> getLocationAreas(String? pageURL) async {
-  const endpoint = "/location-area/23213ewqdsadas";
+  const endpoint = "/location-area";
   String fullURL = Client.baseURL + endpoint;
 
   if (pageURL != null) {
