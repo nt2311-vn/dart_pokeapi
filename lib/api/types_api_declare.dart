@@ -36,7 +36,7 @@ class Result {
 }
 
 @JsonSerializable()
-class Example {
+class LocationArea {
   List<EncounterMethodRates>? encounterMethodRates;
   int? gameIndex;
   int? id;
@@ -45,7 +45,7 @@ class Example {
   List<Names>? names;
   List<PokemonEncounters>? pokemonEncounters;
 
-  Example(
+  LocationArea(
       {this.encounterMethodRates,
       this.gameIndex,
       this.id,
@@ -54,7 +54,7 @@ class Example {
       this.names,
       this.pokemonEncounters});
 
-  Example.fromJson(Map<String, dynamic> json) {
+  LocationArea.fromJson(Map<String, dynamic> json) {
     encounterMethodRates = json["encounter_method_rates"] == null
         ? null
         : (json["encounter_method_rates"] as List)
