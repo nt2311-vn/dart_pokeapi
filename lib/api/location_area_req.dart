@@ -4,7 +4,7 @@ import "package:dart_pokeapi/api/pokeapi.dart";
 
 import "./types_api_declare.dart";
 
-void getLocationAreas(String? pageURL) async {
+Future<LocationAreaResp?> getLocationAreas(String? pageURL) async {
   const endpoint = "/location-area";
   String fullURL = Client.baseURL + endpoint;
 
@@ -18,9 +18,12 @@ void getLocationAreas(String? pageURL) async {
 
   if (res.statusCode > 399) {
     print("Bad error code: ${res.statusCode}");
-    return;
+    return null;
   }
 
   final resBody = await res.transform(utf8.decoder).join();
-  print(resBody);
+  LocationAreaResp locationArea =
+      LocationAreaResp.fromJson(json.decode(resBody));
+
+  return locationArea;
 }
