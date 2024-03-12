@@ -5,9 +5,12 @@ import "./api/location_area_req.dart";
 Future<void> callbackMap() async {
   final res = await getLocationAreas(Client.nextURL);
   print("Location areas:");
+
   for (var result in res!.results) {
     print("-${result.name}");
   }
+
+  print("");
 
   Client.nextURL = res.next;
   Client.previousURL = res.previous;
@@ -25,6 +28,8 @@ Future<void> callbackMapb() async {
   for (var location in res!.results) {
     print("-${location.name}");
   }
+
+  print("");
 
   Client.nextURL = res.next;
   Client.previousURL = res.previous;
