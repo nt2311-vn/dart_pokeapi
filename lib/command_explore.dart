@@ -16,7 +16,7 @@ Future<void> callBackExplore(List<String> args) async {
     }
 
     print("Exploring $locationName");
-    print("List of catchable pokemons in: $locationName");
+    print("List of catchable pokemons in $locationName:");
 
     for (var pokemon in locationArea.pokemonEncounters!) {
       print("-${pokemon.pokemon!.name}");
