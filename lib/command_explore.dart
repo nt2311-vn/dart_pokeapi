@@ -1,20 +1,8 @@
-import 'dart:io';
-
 import 'package:dart_pokeapi/api/explore_area.dart';
 import 'package:dart_pokeapi/api/types_api_declare.dart';
 
-Future<void> callBackExplore() async {
+Future<void> callBackExplore(List<String> args) async {
   try {
-    String? input = stdin.readLineSync();
-
-    if (input == null || input.isEmpty) {
-      throw Exception("Please provide a location name to explore");
-    }
-
-    final args = input.split(" ");
-
-    print(args);
-
     if (args.length != 1) {
       throw Exception("No proper location name provided");
     }
@@ -28,11 +16,13 @@ Future<void> callBackExplore() async {
     }
 
     print("Exploring $locationName");
-    print("List of catchable pokemons:");
+    print("List of catchable pokemons in: $locationName");
 
     for (var pokemon in locationArea.pokemonEncounters!) {
       print("-${pokemon.pokemon!.name}");
     }
+
+    print("");
   } catch (err) {
     print(err);
   }
