@@ -1,5 +1,6 @@
 import "./command_help.dart";
 import "./command_map.dart";
+import "./command_clear.dart";
 import "dart:io";
 
 class CommandLine {
@@ -17,6 +18,8 @@ Map<String, CommandLine> getCliCommands() {
         "map", "List down the map info in the world of pokemon", callbackMap),
     "explore": CommandLine(
         "explore", "Explore the area by name or id", () => Future.value()),
-    "exit": CommandLine("exit", "Exit the prgoram", () => exit(0))
+    "exit": CommandLine("exit", "Exit the prgoram", () => exit(0)),
+    "clear":
+        CommandLine("clear", "Clear all the log in the cli", callBackClear),
   };
 }
