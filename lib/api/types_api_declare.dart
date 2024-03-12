@@ -13,6 +13,11 @@ class LocationAreaResp {
       _$LocationAreaRespFromJson(json);
 
   Map<String, dynamic> toJson() => _$LocationAreaRespToJson(this);
+
+  @override
+  String toString() {
+    return "LocationAreaResp: {count: $count, next: $next, previous: $previous, results: $results}";
+  }
 }
 
 @JsonSerializable()
@@ -23,4 +28,9 @@ class Result {
   Result(this.name, this.url);
   factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
   Map<String, dynamic> toJson() => _$ResultToJson(this);
+
+  @override
+  String toString() {
+    return "Result: {name: $name, url: $url}";
+  }
 }
