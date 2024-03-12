@@ -16,6 +16,10 @@ Map<String, CommandLine> getCliCommands() {
         "help", "Get all the available list commands", callbackHelp),
     "map": CommandLine(
         "map", "List down the map info in the world of pokemon", callbackMap),
+    "mapb": CommandLine(
+        "mapb",
+        "List down the previous map info in the world of pokemon",
+        callbackMapb),
     "explore": CommandLine(
         "explore", "Explore the area by name or id", () => Future.value()),
     "exit": CommandLine("exit", "Exit the prgoram", () => exit(0)),
