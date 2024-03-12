@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:dart_pokeapi/command_line.dart';
+import './command_line.dart';
 
 Future<void> startRepl() async {
   while (true) {
