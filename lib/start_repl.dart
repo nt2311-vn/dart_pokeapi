@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dart_pokeapi/command_line.dart';
 
-void startRepl() {
+Future<void> startRepl() async {
   while (true) {
     stdout.write("dart_pokecli> ");
     String? input = stdin.readLineSync();
@@ -19,7 +19,7 @@ void startRepl() {
     if (availabeCommands[command] == null) {
       print("Invalid command");
     } else {
-      availabeCommands[command]!.callback();
+      await availabeCommands[command]!.callback();
     }
   }
 }
