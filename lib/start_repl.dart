@@ -14,12 +14,18 @@ Future<void> startRepl() async {
     var inputList = input.split(" ");
     var command = inputList[0];
 
+    List<String> args = [];
+
+    if (inputList.length > 1) {
+      args = inputList.sublist(1);
+    }
+
     var availabeCommands = getCliCommands();
 
     if (availabeCommands[command] == null) {
       print("Invalid command");
     } else {
-      await availabeCommands[command]!.callback();
+      await availabeCommands[command]!.callback(args);
     }
   }
 }
